@@ -10,6 +10,12 @@
             margin: 0;
             padding: 20px;
             background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
         }
         form {
             background-color: #fff;
@@ -17,7 +23,8 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
-            margin: 0 auto;
+            width: 100%;
+            z-index: 2;
         }
         h1 {
             text-align: center;
@@ -51,10 +58,46 @@
         button:hover {
             background-color: #218838;
         }
+        .small-text {
+            font-size: 10px;
+            color: #888;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+            z-index: 1;
+            overflow: hidden;
+        }
+        .background-animation::before, .background-animation::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: rotate 15s linear infinite;
+        }
+        .background-animation::after {
+            background: rgba(255, 255, 255, 0.05);
+            animation-duration: 30s;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
+    <div class="background-animation"></div>
     <form action="https://formspree.io/f/mjkbkbrn" method="POST" enctype="multipart/form-data">
+        <div class="small-text">Entrevista de bienvenida a nuevo cliente</div>
         <h1>Formulario de Información para Negocio de Vitalización y Bienestar</h1>
         
         <label for="nombre">Nombre Completo:</label>
@@ -122,6 +165,7 @@
         <input type="text" id="dominio" name="dominio">
         
         <button type="submit">Enviar</button>
+        <div class="small-text">Vlado Montes 2024 | Web Design and coding</div>
     </form>
 </body>
 </html>
