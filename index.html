@@ -8,16 +8,16 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #f0f0f0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
             position: relative;
+            overflow: hidden;
         }
-        form {
+        .container {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
@@ -25,6 +25,8 @@
             max-width: 600px;
             width: 100%;
             z-index: 2;
+            overflow-y: auto;
+            max-height: 90vh;
         }
         h1 {
             text-align: center;
@@ -96,76 +98,78 @@
 </head>
 <body>
     <div class="background-animation"></div>
-    <form action="https://formspree.io/f/mjkbkbrn" method="POST" enctype="multipart/form-data">
+    <div class="container">
         <div class="small-text">Entrevista de bienvenida a nuevo cliente</div>
         <h1>Formulario de Información para Negocio de Vitalización y Bienestar</h1>
         
-        <label for="nombre">Nombre Completo:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        
-        <label for="negocio">Nombre del Negocio o Empresa:</label>
-        <input type="text" id="negocio" name="negocio" required>
-        
-        <label for="descripcion">Descripción del Negocio o Empresa (Explique en sus propias palabras):</label>
-        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
-        
-        <label for="servicios">Servicios Ofrecidos (Describa brevemente cada servicio):</label>
-        <textarea id="servicios" name="servicios" rows="4" required></textarea>
-        
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="_replyto" required>
-        
-        <label for="telefono">Número de Teléfono:</label>
-        <input type="text" id="telefono" name="telefono" required>
-        
-        <label for="direccion">Dirección Física (si aplica):</label>
-        <textarea id="direccion" name="direccion" rows="2"></textarea>
-        
-        <label for="web">Sitio Web (si ya tiene uno):</label>
-        <input type="text" id="web" name="web">
-        
-        <label for="redes">Redes Sociales (Proporcione enlaces a sus perfiles de redes sociales):</label>
-        <input type="text" id="facebook" name="facebook" placeholder="Facebook">
-        <input type="text" id="instagram" name="instagram" placeholder="Instagram">
-        <input type="text" id="twitter" name="twitter" placeholder="Twitter">
-        <input type="text" id="linkedin" name="linkedin" placeholder="LinkedIn">
-        <input type="text" id="otros" name="otros" placeholder="Otras Redes Sociales">
-        
-        <label for="colores">Colores que le gustan para su marca:</label>
-        <input type="text" id="colores" name="colores">
-        
-        <label for="estilo">Estilo Visual (Describa el estilo visual de su marca - elegante, moderno, clásico, etc.):</label>
-        <textarea id="estilo" name="estilo" rows="2"></textarea>
-        
-        <label for="publico">Descripción del Público Objetivo:</label>
-        <textarea id="publico" name="publico" rows="4" required></textarea>
-        
-        <label for="edad">Rango de Edad de los Clientes:</label>
-        <input type="text" id="edad" name="edad" required>
-        
-        <label for="intereses">Intereses Principales de los Clientes:</label>
-        <textarea id="intereses" name="intereses" rows="4" required></textarea>
-        
-        <label for="testimonios">Testimonios de Clientes (Si tiene, agregue algunos testimonios de clientes satisfechos):</label>
-        <textarea id="testimonios" name="testimonios" rows="4"></textarea>
-        
-        <label for="preguntas">Preguntas Frecuentes (Listado de preguntas frecuentes y sus respuestas):</label>
-        <textarea id="preguntas" name="preguntas" rows="4"></textarea>
-        
-        <label for="imagenes">Suba imágenes que le gusten para inspirar su identidad visual:</label>
-        <input type="file" id="imagenes" name="imagenes" multiple>
-        
-        <label for="observaciones">Otras Observaciones o Información Relevante:</label>
-        <textarea id="observaciones" name="observaciones" rows="4"></textarea>
-        
-        <label for="website">¿Qué le gustaría ver en su sitio web?</label>
-        <textarea id="website" name="website" rows="4" required></textarea>
-        
-        <label for="dominio">Sugerencias para el nombre de dominio de su página web:</label>
-        <input type="text" id="dominio" name="dominio">
-        
-        <button type="submit">Enviar</button>
-        <div class="small-text">Vlado Montes 2024 | Web Design and coding</div>
-    </form>
+        <form action="https://formspree.io/f/mjkbkbrn" method="POST" enctype="multipart/form-data">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="negocio">Nombre del Negocio o Empresa:</label>
+            <input type="text" id="negocio" name="negocio" required>
+            
+            <label for="descripcion">Descripción del Negocio o Empresa (Explique en sus propias palabras):</label>
+            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+            
+            <label for="servicios">Servicios Ofrecidos (Describa brevemente cada servicio):</label>
+            <textarea id="servicios" name="servicios" rows="4" required></textarea>
+            
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="_replyto" required>
+            
+            <label for="telefono">Número de Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" required>
+            
+            <label for="direccion">Dirección Física (si aplica):</label>
+            <textarea id="direccion" name="direccion" rows="2"></textarea>
+            
+            <label for="web">Sitio Web (si ya tiene uno):</label>
+            <input type="text" id="web" name="web">
+            
+            <label for="redes">Redes Sociales (Proporcione enlaces a sus perfiles de redes sociales):</label>
+            <input type="text" id="facebook" name="facebook" placeholder="Facebook">
+            <input type="text" id="instagram" name="instagram" placeholder="Instagram">
+            <input type="text" id="twitter" name="twitter" placeholder="Twitter">
+            <input type="text" id="linkedin" name="linkedin" placeholder="LinkedIn">
+            <input type="text" id="otros" name="otros" placeholder="Otras Redes Sociales">
+            
+            <label for="colores">Colores que le gustan para su marca:</label>
+            <input type="text" id="colores" name="colores">
+            
+            <label for="estilo">Estilo Visual (Describa el estilo visual de su marca - elegante, moderno, clásico, etc.):</label>
+            <textarea id="estilo" name="estilo" rows="2"></textarea>
+            
+            <label for="publico">Descripción del Público Objetivo:</label>
+            <textarea id="publico" name="publico" rows="4" required></textarea>
+            
+            <label for="edad">Rango de Edad de los Clientes:</label>
+            <input type="text" id="edad" name="edad" required>
+            
+            <label for="intereses">Intereses Principales de los Clientes:</label>
+            <textarea id="intereses" name="intereses" rows="4" required></textarea>
+            
+            <label for="testimonios">Testimonios de Clientes (Si tiene, agregue algunos testimonios de clientes satisfechos):</label>
+            <textarea id="testimonios" name="testimonios" rows="4"></textarea>
+            
+            <label for="preguntas">Preguntas Frecuentes (Listado de preguntas frecuentes y sus respuestas):</label>
+            <textarea id="preguntas" name="preguntas" rows="4"></textarea>
+            
+            <label for="imagenes">Suba imágenes que le gusten para inspirar su identidad visual:</label>
+            <input type="file" id="imagenes" name="imagenes" multiple>
+            
+            <label for="observaciones">Otras Observaciones o Información Relevante:</label>
+            <textarea id="observaciones" name="observaciones" rows="4"></textarea>
+            
+            <label for="website">¿Qué le gustaría ver en su sitio web?</label>
+            <textarea id="website" name="website" rows="4" required></textarea>
+            
+            <label for="dominio">Sugerencias para el nombre de dominio de su página web:</label>
+            <input type="text" id="dominio" name="dominio">
+            
+            <button type="submit">Enviar</button>
+            <div class="small-text">Vlado Montes 2024 | Web Design and coding</div>
+        </form>
+    </div>
 </body>
 </html>
