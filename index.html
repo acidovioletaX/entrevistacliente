@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Información para Negocio de Vitalización y Bienestar</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -94,14 +95,32 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .floating-words {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 2rem;
+            animation: float 10s infinite;
+            z-index: 1;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
     </style>
 </head>
 <body>
     <div class="background-animation"></div>
+    <div class="floating-words" style="top: 20%; left: 10%;">Diseño Web</div>
+    <div class="floating-words" style="top: 40%; left: 30%;">Marketing</div>
+    <div class="floating-words" style="top: 60%; left: 50%;">Bienvenida</div>
+    <div class="floating-words" style="top: 80%; left: 70%;">Innovación</div>
     <div class="container">
         <div class="small-text">Entrevista de bienvenida a nuevo cliente</div>
         <h1>Formulario de Información para Negocio de Vitalización y Bienestar</h1>
         
+        <p>¡Bienvenido! Estás a punto de ingresar a un mundo de posibilidades a través de tu página web. Este formulario nos ayudará a entender mejor tu negocio y tus necesidades para crear una página que te represente perfectamente.</p>
+
         <form action="https://formspree.io/f/mjkbkbrn" method="POST" enctype="multipart/form-data">
             <label for="nombre">Nombre Completo:</label>
             <input type="text" id="nombre" name="nombre" required>
@@ -149,6 +168,9 @@
             <label for="intereses">Intereses Principales de los Clientes:</label>
             <textarea id="intereses" name="intereses" rows="4" required></textarea>
             
+            <label for="competencia">URLs o páginas de negocios similares o competencias:</label>
+            <textarea id="competencia" name="competencia" rows="4"></textarea>
+            
             <label for="testimonios">Testimonios de Clientes (Si tiene, agregue algunos testimonios de clientes satisfechos):</label>
             <textarea id="testimonios" name="testimonios" rows="4"></textarea>
             
@@ -171,5 +193,12 @@
             <div class="small-text">Vlado Montes 2024 | Web Design and coding</div>
         </form>
     </div>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            var x = e.clientX / window.innerWidth;
+            var y = e.clientY / window.innerHeight;
+            document.querySelector('.background-animation').style.transform = 'translate(' + x * 10 + 'px, ' + y * 10 + 'px)';
+        });
+    </script>
 </body>
 </html>
